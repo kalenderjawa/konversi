@@ -1,0 +1,25 @@
+{
+  "name": "konversi",
+  "version": "1.0.0-alpha",
+  "description": "Utilitas konversi tanggal Jawa, Hijriyah dan Masehi (Gregorian)",
+  "main": "jest.config.js",
+  "type": "module",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.4.2"
+  },
+  "scripts": {
+    "test": "npx jest --no-cache --coverage --testPathIgnorePatterns=\"_data.*\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kalenderjawa/konversi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kalenderjawa/konversi/issues"
+  },
+  "homepage": "https://github.com/kalenderjawa/konversi#readme"
+}
