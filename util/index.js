@@ -1,6 +1,7 @@
 // prettier-ignore
 /**
- * Original code: http://www.staff.science.uu.nl/~gent0113/islam/ummalqura_converter.htm
+ * This source code based on https://github.com/dalwadani/hijri-converter
+ * and the original data code ummalqura from http://www.staff.science.uu.nl/~gent0113/islam/ummalqura_converter.htm
  */
 const ummalqura = {
     ummalquraData: [28607, 28636, 28665, 28695, 28724, 28754, 28783, 28813, 28843, 28872, 28901, 28931, 28960, 28990, 29019, 29049, 29078, 29108, 29137, 29167,
@@ -108,14 +109,14 @@ function h2d(hy, hm, hd) {
     return jdn;
 }
 
-function d2h(jdn) {
+function d2h(jdn, dayAdjustment = 0) {
     let mjdn = jdn - 2400000,
         i = getNewMoonMJDNIndexByJDN(mjdn),
         totalMonths = i + 16260,
         cYears = Math.floor((totalMonths - 1) / 12),
         hy = cYears + 1,
         hm = totalMonths - 12 * cYears,
-        hd = mjdn - ummalqura.ummalquraData[i - 1] + 1;
+        hd = mjdn - ummalqura.ummalquraData[i - 1] + dayAdjustment;
 
     return {
         hy: hy,
@@ -126,20 +127,19 @@ function d2h(jdn) {
 
 function g2d(gy, gm, gd) {
     let d =
-        div((gy + div(gm - 8, 6) + 100100) * 1461, 4) +
-        div(153 * mod(gm + 9, 12) + 2, 5) +
-        gd -
-        34840408;
+        div((gy + div(gm - 8, 6) + 100100) * 1461, 4) + div(153 * mod(gm + 9, 12) + 2, 5) + gd - 34840408;
     d = d - div(div(gy + 100100 + div(gm - 8, 6), 100) * 3, 4) + 752;
     return d;
 }
 
-function d2g(jdn) {
+function d2g(jdn, dayAdjustment = 2) {
     let j, i, gd, gm, gy;
     j = 4 * jdn + 139361631;
     j = j + div(div(4 * jdn + 183187720, 146097) * 3, 4) * 4 - 3908;
     i = div(mod(j, 1461), 4) * 5 + 308;
-    gd = div(mod(i, 153), 5) + 1;
+
+    gd = div(mod(i, 153), 5) + dayAdjustment;
+
     gm = mod(div(i, 153), 12) + 1;
     gy = div(j, 1461) - 100100 + div(8 - gm, 6);
     return {
@@ -162,19 +162,12 @@ function getNewMoonMJDNIndexByJDN(mjdn) {
     }
 }
 
-function toHijri(gy, gm, gd, adj) {
-    let h = d2h(g2d(gy, gm, gd));
-    return h;
+function masehikeHijriyah(gy, gm, gd, adj) {
+    return d2h(g2d(gy, gm, gd));
 }
 
-function toGregorian(hy, hm, hd, adj) {
-    let g = d2g(h2d(hy, hm, hd));
-    return g;
+function hijriyahKeMasehi(hy, hm, hd, adj) {
+    return d2g(h2d(hy, hm, hd));
 }
 
-export {
-    toHijri,
-    toGregorian,
-    toHijri as MasehikeHijriyah,
-    toGregorian as HijriyahKeMasehi
-}
+module.exports = { masehikeHijriyah, hijriyahKeMasehi }
