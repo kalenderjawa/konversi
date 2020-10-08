@@ -170,4 +170,4 @@ function HijriyahKeMasehi(hy, hm, hd, adj) {
     return d2g(h2d(hy, hm, hd));
 }
 
-module.exports = { MasehikeHijriyah, HijriyahKeMasehi }
+export { MasehikeHijriyah, HijriyahKeMasehi }
