@@ -162,12 +162,12 @@ function getNewMoonMJDNIndexByJDN(mjdn) {
     }
 }
 
-function masehikeHijriyah(gy, gm, gd, adj) {
+function MasehikeHijriyah(gy, gm, gd, adj) {
     return d2h(g2d(gy, gm, gd));
 }
 
-function hijriyahKeMasehi(hy, hm, hd, adj) {
+function HijriyahKeMasehi(hy, hm, hd, adj) {
     return d2g(h2d(hy, hm, hd));
 }
 
-module.exports = { masehikeHijriyah, hijriyahKeMasehi }
+module.exports = { MasehikeHijriyah, HijriyahKeMasehi }
