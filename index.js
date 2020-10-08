@@ -1,14 +1,10 @@
+/**
+ * Utilitas Entry
+ */
 import { HijriyahKeMasehi, MasehikeHijriyah } from "./util/index";
+import { JawaKeHijriyah, HijriyahKeJawa } from "./util/j2h";
 
-function JawaKeHijriyah({ d, m, y }) {
-  return { tgl: d, bln: m, thn: y - 512 };
-}
-
-function HijriyahKeJawa({ d, m, y }) {
-  return { tgl: d, bln: m, thn: y + 512 };
-}
-
-module.exports = {
+export {
   JawaKeHijriyah,
   HijriyahKeJawa,
   MasehikeHijriyah,
