@@ -1,6 +1,6 @@
 {
   "name": "konversi",
-  "version": "1.0.0-alpha",
+  "version": "1.0.0-alpha.0",
   "description": "Utilitas konversi tanggal Jawa, Hijriyah dan Masehi (Gregorian)",
   "main": "jest.config.js",
   "type": "module",
