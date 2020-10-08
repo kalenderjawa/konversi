@@ -1,5 +1,5 @@
 {
-  "name": "konversi",
+  "name": "@kalenderjawa/konversi",
   "version": "1.0.0-alpha.0",
   "description": "Utilitas konversi tanggal Jawa, Hijriyah dan Masehi (Gregorian)",
   "main": "index.js",
