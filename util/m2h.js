@@ -90,7 +90,7 @@ function basecal(date, adjust) {
   return myRes;
 }
 
-exports.MasehiKeHijriyah = function (date, adjustment) {
+function MasehiKeHijriyah(date, adjustment) {
   let iHariHijriyah = new Array(
     "al-Aḥad",
     "al-Itsnain",
@@ -126,4 +126,6 @@ exports.MasehiKeHijriyah = function (date, adjustment) {
     year: iDate[7],
   };
   return islamicDateObject;
-};
+}
+
+export { MasehiKeHijriyah };
