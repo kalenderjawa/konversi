@@ -90,7 +90,7 @@ function basecal(date, adjust) {
   return myRes;
 }
 
-exports.konversi = function (date, adjustment) {
+exports.MasehiKeHijriyah = function (date, adjustment) {
   let iHariHijriyah = new Array(
     "al-Aḥad",
     "al-Itsnain",
