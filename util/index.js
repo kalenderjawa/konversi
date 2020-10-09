@@ -161,7 +161,9 @@ function getNewMoonMJDNIndexByJDN(mjdn) {
         if (ummalqura.ummalquraData[i] > mjdn) return i;
     }
 }
-
+/**
+ * Adjusment sangat diperlukan untuk metode ini
+ */
 function MasehikeHijriyah(gy, gm, gd, adj) {
     return d2h(g2d(gy, gm, gd));
 }
