@@ -11,7 +11,10 @@ describe("Test All Konversi", () => {
   });
 
   test("Masehi ke Hijriyah M2H", () => {
-    let { year, month, dayOfMonth } = M2H.MasehiKeHijriyah( new Date("2020-10-7"), -1);
+    let { year, month, dayOfMonth } = M2H.MasehiKeHijriyah(
+      new Date("2020-10-7"),
+      -1
+    );
     expect(year).toBe(1442);
     expect(month).toBe(2);
     expect(dayOfMonth).toBe(19);
@@ -25,5 +28,10 @@ describe("Test All Konversi", () => {
   test("Masehi Ke Jawa", () => {
     let o = Konversi.MasehiKeJawa({ y: 2020, m: 10, d: 18 });
     expect(o).toEqual({ tgl: 1, bln: 3, thn: 1954 });
+  });
+
+  test("Jawa Ke Masehi", () => {
+    let x = Konversi.MasehiKeJawa({ y: 2020, m: 10, d: 10 });
+    expect(x).toEqual({ tgl: 22, bln: 2, thn: 1954 });
   });
 });
