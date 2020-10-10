@@ -3,7 +3,7 @@
  */
 import { HijriyahKeMasehi } from "./util/index";
 import { MasehiKeHijriyah } from "./util/m2h";
-import { JawaKeHijriyah, HijriyahKeJawa, MasehiKeJawa } from "./util/j2h";
+import { JawaKeHijriyah, HijriyahKeJawa, MasehiKeJawa, JawaKeMasehi } from "./util/j2h";
 
 export {
   JawaKeHijriyah,
@@ -11,4 +11,5 @@ export {
   MasehiKeHijriyah,
   HijriyahKeMasehi,
   MasehiKeJawa,
+  JawaKeMasehi
 };
