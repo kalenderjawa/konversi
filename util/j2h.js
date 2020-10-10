@@ -1,7 +1,17 @@
 /**
- * Jawa Util
+ * Konversi Penanggalan:
+ * - Jawa Ke Hijriyah
+ * - Hijriyah ke Jawa
+ * - Jawa Ke Masehi
+ * - Masehi Ke Jawa
  */
 import { MasehiKeHijriyah } from "./m2h";
+import { HijriyahKeMasehi } from "./index";
+
+/**
+ * Perbedaan penanggalan Jawa dan Hijriyah terutama pada tahun
+ * dengan selisih tahun yaitu 512. (butuh testing!)
+ */
 
 function JawaKeHijriyah({ d, m, y }) {
   return { tgl: d, bln: m, thn: y - 512 };
@@ -9,6 +19,13 @@ function JawaKeHijriyah({ d, m, y }) {
 
 function HijriyahKeJawa({ d, m, y }) {
   return { tgl: d, bln: m, thn: y + 512 };
+}
+
+/**--*/
+
+function JawaKeMasehi({ d, m, y }) {
+  let { tgl, bln, thn } = JawaKeHijriyah({ d, m, y });
+  return HijriyahKeMasehi(thn, bln, tgl);
 }
 
 function MasehiKeJawa({ y, m, d }) {
@@ -19,4 +36,4 @@ function MasehiKeJawa({ y, m, d }) {
   return HijriyahKeJawa({ d: dayOfMonth, m: month, y: year });
 }
 
-export { JawaKeHijriyah, HijriyahKeJawa, MasehiKeJawa };
+export { JawaKeHijriyah, HijriyahKeJawa, JawaKeMasehi, MasehiKeJawa };
