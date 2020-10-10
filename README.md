@@ -1,6 +1,6 @@
 # @kalenderjawa/konversi
 
-Utilitas konversi tanggal Jawa, Hijriyah &amp; Masehi (Gregorian)
+Utilitas konversi tanggal Jawa, Hijriyah dan Masehi (Gregorian)
 
 ## License
 
