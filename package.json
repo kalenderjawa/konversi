@@ -1,6 +1,6 @@
 {
   "name": "@kalenderjawa/konversi",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "description": "Utilitas konversi tanggal Jawa, Hijriyah dan Masehi (Gregorian)",
   "main": "lib/konversi.min.js",
   "type": "module",
