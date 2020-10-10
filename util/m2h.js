@@ -1,5 +1,8 @@
 /**
- * Konversi dari penanggalan Masehi (Gregorian) ke Hijriyah
+ * Konversi dari penanggalan Masehi (Gregorian) ke Hijriyah.
+ * 
+ * Metode dibawah bisa memberikan adjustment hari tetpi masih diperlukan
+ * dokumentasi yang lengkap tentang perhitungannya.
  *
  * Source: https://github.com/arabiaweather/hijri-date
  * License: MIT
