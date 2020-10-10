@@ -31,7 +31,7 @@ describe("Test All Konversi", () => {
   });
 
   test("Jawa Ke Masehi", () => {
-    let x = Konversi.MasehiKeJawa({ y: 2020, m: 10, d: 10 });
-    expect(x).toEqual({ tgl: 22, bln: 2, thn: 1954 });
+    let x = Konversi.JawaKeMasehi({ y: 1954, m: 2, d: 22 });
+    expect(x).toEqual({ gd: 10, gm: 10, gy: 2020 });
   });
 });
