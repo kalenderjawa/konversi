@@ -26,8 +26,8 @@ describe("Test All Konversi", () => {
   });
 
   test("Masehi Ke Jawa", () => {
-    let o = Konversi.MasehiKeJawa({ y: 2020, m: 10, d: 18 });
-    expect(o).toEqual({ tgl: 1, bln: 3, thn: 1954 });
+    let o = Konversi.MasehiKeJawa({ y: 2021, m: 8, d: 30 });
+    expect(o).toEqual({ tgl: 21, bln: 1, thn: 1955 });
   });
 
   test("Jawa Ke Masehi", () => {
